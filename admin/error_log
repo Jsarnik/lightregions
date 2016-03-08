@@ -1,0 +1,2 @@
+[04-Aug-2015 20:05:29 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 21888 bytes) in /home/lightregions/public_html/admin/bulk_thumb.php on line 19
+[04-Aug-2015 20:10:42 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 21888 bytes) in /home/lightregions/public_html/admin/bulk_thumb.php on line 35

@@ -1,0 +1,22 @@
+                 
+
+<div id="new_category">
+
+                <div class="modal-header">
+                    <h3>New Category</h3>
+                </div>
+
+                <div class="modal-body" ng-model="object">                            
+
+                <span>Name: </span><input type="text" name="name" ng-model="object.name" ng-init="object.name=''"/><br>
+        
+                </div>
+
+
+                    <div class="ui-modal-footer">
+            <div class="button delete" ng-click="cancel()">Cancel</div>                    
+            <div id="save_upload" class="button add active" ng-click="createCat()" class="">Save</div>                    
+
+                    </div>
+
+</div>

@@ -1,0 +1,80 @@
+<menu>
+	<theme name="photography">
+		<items>
+			<category id="1">
+				<name>music</name>
+				<shortDesc></shortDesc>
+				<image id="1">
+					<title></title>
+					<url></url>
+				</image>	
+				<image id="2">
+					<title></title>
+					<url></url>
+				</image>	
+			</category>
+			<category id="2">
+				<name>apparel</name>
+				<shortDesc></shortDesc>
+				<image id="1">
+					<title></title>
+					<url></url>
+				</image>	
+				<image id="2">
+					<title></title>
+					<url></url>
+				</image>	
+			</category>
+		</items>
+	</theme>
+	<theme name="production">
+		<items>
+			<category id="1">
+				<name>Showreels</name>
+				<shortDesc></shortDesc>
+				<subCategory id="1">
+					<video id="1">
+						<title></title>
+						<shortDesc></shortDesc>
+						<thumb></thumb>
+						<src></src>
+						<youtubeID></youtubeID>
+						<vimeo></vimeo>
+					</video>
+				</subCategory>	
+			</category>
+			<category id="2">
+				<name>Showreels</name>
+				<shortDesc></shortDesc>
+				<subCategory id="1">
+					<video id="1">
+						<title></title>
+						<shortDesc></shortDesc>
+						<thumb></thumb>
+						<src></src>
+						<youtubeID></youtubeID>
+						<vimeo></vimeo>
+					</video>
+				</subCategory>	
+				<subCategory id="2">
+					<video id="2">
+						<title></title>
+						<shortDesc></shortDesc>
+						<thumb></thumb>
+						<src></src>
+						<youtubeID></youtubeID>
+						<vimeo></vimeo>
+					</video>
+					<video id="3">
+						<title></title>
+						<shortDesc></shortDesc>
+						<thumb></thumb>
+						<src></src>
+						<youtubeID></youtubeID>
+						<vimeo></vimeo>
+					</video>					
+				</subCategory>				
+			</category>	
+		</items>
+	</theme>
+</menu>

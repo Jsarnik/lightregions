@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<photography>
+   <category>
+      <id></id>
+      <name></name>
+      <shortDesc></shortDesc>
+      <items>
+         <item>
+            <id>1</id>
+            <name>Music</name>
+            <shortDesc>1</shortDesc>
+            <images>
+               <image>
+                  <id>1</id>
+                  <title>Lady Gaga</title>
+                  <url>/images/music/Lady_Gaga.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>2</id>
+                  <title>Lil Wayne</title>
+                  <url>/images/music/Lil_Wayne.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>3</id>
+                  <title>Tyler The Creator</title>
+                  <url>/images/music/Tyler_The_Creator.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>4</id>
+                  <title>Dj Skrillex</title>
+                  <url>/images/music/Skrillex.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>5</id>
+                  <title>Swedish_Mafia_Steve_Angello</title>
+                  <url>/images/music/Swedish_Mafia_Steve_Angello.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>6</id>
+                  <title>Swizz_Beatz</title>
+                  <url>/images/music/Swizz_Beatz.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>7</id>
+                  <title>ECNO</title>
+                  <url>/images/music/ecno.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>8</id>
+                  <title>Band Of Skulls</title>
+                  <url>/images/music/Band_of_Skulls.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>9</id>
+                  <title>John Waters</title>
+                  <url>/images/music/John Waters.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>10</id>
+                  <title>Earl Sweat Shirt</title>
+                  <url>/images/music/Earl_Sweat_Shirt.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>11</id>
+                  <title>Dj Carnage</title>
+                  <url>/images/music/dj_carnage.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>12</id>
+                  <title>Buraka Som Sistema</title>
+                  <url>/images/music/buraka_som_sistena.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>13</id>
+                  <title>Dj Jazzy Jeff</title>
+                  <url>/images/music/Jazzy_Jeff.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>14</id>
+                  <title>Dj Lance Rock</title>
+                  <url>/images/music/Dj_Lance_Rock.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>15</id>
+                  <title>Kat_Graham</title>
+                  <url>/images/music/Kat_Graham.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>16</id>
+                  <title>Peanut Butter Wolf</title>
+                  <url>/images/music/Peanut_Butter_Wolf.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>17</id>
+                  <title>Gas Lamp Killer</title>
+                  <url>/images/music/Gas_Lamp_Killer.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>18</id>
+                  <title>Jasper_OF</title>
+                  <url>/images/music/Jasper_OF.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>19</id>
+                  <title>Dj_AM</title>
+                  <url>/images/music/Dj_AM.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>20</id>
+                  <title>Travis Barker</title>
+                  <url>/images/music/Travs_Barker.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>21</id>
+                  <title>Mc_Eiht</title>
+                  <url>/images/music/Mc_Eiht.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>22</id>
+                  <title>Spencer_Pollard_TT</title>
+                  <url>/images/music/Spencer_Pollard_TT.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>23</id>
+                  <title>Lee_Spielman_Trash_Talk</title>
+                  <url>/images/music/Lee_Spielman_Trash_Talk.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>24</id>
+                  <title>Garrett_Stevenson_trash_talk</title>
+                  <url>/images/music/Garrett_Stevenson_trash_talk.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>25</id>
+                  <title>Mike_posner</title>
+                  <url>/images/music/Mike_posner.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>26</id>
+                  <title>TheSwans</title>
+                  <url>/images/music/TheSwans.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>27</id>
+                  <title>Domo OddFuture</title>
+                  <url>/images/music/Domo.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>28</id>
+                  <title>Mike G OddFuture</title>
+                  <url>/images/music/Mike_G.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>29</id>
+                  <title>Edward Sharpe and the Magnetic Zeros</title>
+                  <url>/images/music/Edward_Sharpe.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>30</id>
+                  <title>Hodge Beats Mellow Hype</title>
+                  <url>/images/music/Hodge_Beats.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>31</id>
+                  <title>Left Brian Ikon01</title>
+                  <url>/images/music/Left_Brian_Ikon01.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>33</id>
+                  <title>DJ Jeremey Sole</title>
+                  <url>/images/music/dj_jeremy_sole.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>34</id>
+                  <title>Kron Dog</title>
+                  <url>/images/music/Kron_Dog.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>35</id>
+                  <title>Izm White</title>
+                  <url>/images/music/Izm_white.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>36</id>
+                  <title>Rene Perez Calle 13</title>
+                  <url>/images/music/Rene_Perez_Calle_13.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>37</id>
+                  <title>TMills</title>
+                  <url>/images/music/TMills.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+            </images>
+         </item>
+         <item>
+            <id>2</id>
+            <name>Fashion</name>
+            <shortDesc>2</shortDesc>
+            <images>
+               <image>
+                  <id>1</id>
+                  <title>Sarah Oh</title>
+                  <url>/images/fashion/Sarah_Oh.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>2</id>
+                  <title>Paige Elkington</title>
+                  <url>/images/fashion/Paige_Elkington.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>3</id>
+                  <title>Jackie Leslie</title>
+                  <url>/images/fashion/Jackie_Leslie.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>4</id>
+                  <title>Nathalia Castellon 02</title>
+                  <url>/images/fashion/Nathalia_Castellon02.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>5</id>
+                  <title>Christine Donlon 02</title>
+                  <url>/images/fashion/Christine_Donlon02.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>6</id>
+                  <title>Martina Andrews</title>
+                  <url>/images/fashion/Martina_Andrews.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>7</id>
+                  <title>Damriz Perezp</title>
+                  <url>/images/fashion/Damriz_Perezp01.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>8</id>
+                  <title>Cj 02</title>
+                  <url>/images/fashion/Cj02.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>9</id>
+                  <title>Ashli Dowling</title>
+                  <url>/images/fashion/Ashli_Dowling.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>10</id>
+                  <title>Vanessa</title>
+                  <url>/images/fashion/Vanessa.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>11</id>
+                  <title>Christine Donlon 01</title>
+                  <url>/images/fashion/Christine_Donlon01.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>12</id>
+                  <title>Marlene Luciano</title>
+                  <url>/images/fashion/Marlene_Luciano.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>13</id>
+                  <title>Maryella Marie</title>
+                  <url>/images/fashion/Maryella_Marie.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>14</id>
+                  <title>Nathalia Castellon 01</title>
+                  <url>/images/fashion/Nathalia_Castellon01.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>15</id>
+                  <title>Cj 01</title>
+                  <url>/images/fashion/Cj01.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>16</id>
+                  <title>Sarah Oh 02</title>
+                  <url>/images/fashion/Sarah_oh02.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>17</id>
+                  <title>Destiny</title>
+                  <url>/images/fashion/Destiny.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>18</id>
+                  <title>Martina Andrews</title>
+                  <url>/images/fashion/Martina_Andrews02.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>19</id>
+                  <title>Nathalie_Hog</title>
+                  <url>/images/fashion/Nathalie_Hog.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+            </images>
+         </item>
+         <item>
+            <id>3</id>
+            <name>Lifestyle</name>
+            <shortDesc>3</shortDesc>
+            <images>
+               <image>
+                  <id>1</id>
+                  <title>Bitch Dont Kill My Vibe</title>
+                  <url>/images/lifestyle/Bitch_Dont_Kill_My_Vibe.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>2</id>
+                  <title>Paul McCarthy</title>
+                  <url>/images/lifestyle/Paul_McCarthy.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>3</id>
+                  <title>Quadruple Exposure 01</title>
+                  <url>/images/lifestyle/Quadruple_Exposure01.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>5</id>
+                  <title>Chris Suspect DC Photographer</title>
+                  <url>/images/lifestyle/Chris_Suspect_DC_Photographer.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>6</id>
+                  <title>Girl Smoking Miami</title>
+                  <url>/images/lifestyle/Girl_Smoking.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>7</id>
+                  <title>Los Angeles City Hall Homeless</title>
+                  <url>/images/lifestyle/la_city_homeless.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>8</id>
+                  <title>Wilmas</title>
+                  <url>/images/lifestyle/Wilmas.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>9</id>
+                  <title>EDC02</title>
+                  <url>/images/lifestyle/EDC02.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>10</id>
+                  <title>Japanese Girl</title>
+                  <url>/images/lifestyle/japanese_girl.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>11</id>
+                  <title>Junk Yard Jerry 01</title>
+                  <url>/images/lifestyle/Junk_Yard_Jerry01.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>12</id>
+                  <title>Cadillac</title>
+                  <url>/images/lifestyle/Cadillac.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>13</id>
+                  <title>Cuba</title>
+                  <url>/images/lifestyle/Cuba01.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>14</id>
+                  <title>Budah</title>
+                  <url>/images/lifestyle/Budah.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>15</id>
+                  <title>Kenny Powers</title>
+                  <url>/images/lifestyle/Kenny_Powers.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>16</id>
+                  <title>EDC03</title>
+                  <url>/images/lifestyle/EDC03.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>17</id>
+                  <title>Gold Grill</title>
+                  <url>/images/lifestyle/gold_grill.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>18</id>
+                  <title>EDC01</title>
+                  <url>/images/lifestyle/EDC01.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>19</id>
+                  <title>LMFAO</title>
+                  <url>/images/lifestyle/LMFAO.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>20</id>
+                  <title>Day Of The Dead</title>
+                  <url>/images/lifestyle/Day_Of_The_Dead.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>21</id>
+                  <title>Quadruple Exposure 02</title>
+                  <url>/images/lifestyle/Quadruple_Exposure02.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>22</id>
+                  <title>Skeme Mask</title>
+                  <url>/images/lifestyle/Skeme_Mask.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>23</id>
+                  <title>Nurses EDC</title>
+                  <url>/images/lifestyle/Nurses_EDC.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+            </images>
+         </item>
+         <item>
+            <id>4</id>
+            <name>Travel</name>
+            <shortDesc>4</shortDesc>
+            <images>
+               <image>
+                  <id>1</id>
+                  <title>New York Columbus Circle</title>
+                  <url>/images/travel/New_york_circle.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>2</id>
+                  <title>Made In New York</title>
+                  <url>/images/travel/Made_In_NewYork.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>3</id>
+                  <title>Metlife NY Gaints</title>
+                  <url>/images/travel/Metlife_NYGaints.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>4</id>
+                  <title>CD Washington DC</title>
+                  <url>/images/travel/CD.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>5</id>
+                  <title>Miami Lightning</title>
+                  <url>/images/travel/Miami_Lightning.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>6</id>
+                  <title>Miami Nights FleetLine</title>
+                  <url>/images/travel/Miami_Nights_FleetLine.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>7</id>
+                  <title>Ford 1930s</title>
+                  <url>/images/travel/Ford_1930s.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>8</id>
+                  <title>San Francisco Downtown</title>
+                  <url>/images/travel/San_Francisco_Downtown.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>9</id>
+                  <title>Hearst Castle</title>
+                  <url>/images/travel/Hearst_castle.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>10</id>
+                  <title>LA Burning Highway</title>
+                  <url>/images/travel/LA_Burning.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>11</id>
+                  <title>Hollywood Letters</title>
+                  <url>/images/travel/Hollywood_Letters.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>12</id>
+                  <title>Inyokern Airport Eight</title>
+                  <url>/images/travel/Inyokern_Airport_Eight.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>13</id>
+                  <title>P51 Optimized</title>
+                  <url>/images/travel/p51_optimized.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>14</id>
+                  <title>Mexico City DF</title>
+                  <url>/images/travel/Mexico_City_DF.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>15</id>
+                  <title>Tajin VeraCruz Mexico</title>
+                  <url>/images/travel/Tajin_VeraCruz_Mexico.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>16</id>
+                  <title>Alpaca Peru</title>
+                  <url>/images/travel/Alpaca_Peru.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>17</id>
+                  <title>Bora Tribe Peru</title>
+                  <url>/images/travel/Bora_Tribe_Peru.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>18</id>
+                  <title>Hard Working Hands</title>
+                  <url>/images/travel/Hard_Working_Hands.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>19</id>
+                  <title>Machu Picchu Peru</title>
+                  <url>/images/travel/Machu_Picchu_Peru.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>20</id>
+                  <title>Bus Cuba</title>
+                  <url>/images/travel/Bus_Cuba.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>21</id>
+                  <title>Cigra Cuba</title>
+                  <url>/images/travel/Cigra_Cuba.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>22</id>
+                  <title>Cuba Tabaco Fields</title>
+                  <url>/images/travel/Cuba_TabacoFields.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>23</id>
+                  <title>Double Exposure Cuba</title>
+                  <url>/images/travel/Double_Exposure_Cuba.jpeg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>24</id>
+                  <title>Africa Kids</title>
+                  <url>/images/travel/africa_kids.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>25</id>
+                  <title>Africa Bike Man</title>
+                  <url>/images/travel/africa_bike_man.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>26</id>
+                  <title>Africa Sunrise</title>
+                  <url>/images/travel/africa_sunrise.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>27</id>
+                  <title>Japan</title>
+                  <url>/images/travel/Japan02.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>28</id>
+                  <title>Thailand</title>
+                  <url>/images/travel/thailand.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+            </images>
+         </item>
+         <item>
+            <id>5</id>
+            <name>Apparel</name>
+            <shortDesc>5</shortDesc>
+            <images>
+               <image>
+                  <id>1</id>
+                  <title>Kim Shwayze Ikon</title>
+                  <url>/images/apparel/kim_schwayze01_ikon.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>2</id>
+                  <title>Streetwise</title>
+                  <url>/images/apparel/athletics.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>3</id>
+                  <title>Victoria Murdock 01</title>
+                  <url>/images/apparel/Victoria_Murdock01.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>4</id>
+                  <title>Rioters Streetwise</title>
+                  <url>/images/apparel/rioters.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>5</id>
+                  <title>Wild Fox 01</title>
+                  <url>/images/apparel/Wild_Fox01.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>6</id>
+                  <title>Streetwise Fall 02</title>
+                  <url>/images/apparel/Streetwise_Fall02.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>7</id>
+                  <title>Kim Shwayze Ikon 2</title>
+                  <url>/images/apparel/kim_schwayze02_ikon.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>8</id>
+                  <title>Cali Bear Streetwise</title>
+                  <url>/images/apparel/cali_bear.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>9</id>
+                  <title>Victoria Murdock 02</title>
+                  <url>/images/apparel/Victoria_Murdock02.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>10</id>
+                  <title>Streetwise Summer</title>
+                  <url>/images/apparel/Streetwise_Summer.JPG</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>11</id>
+                  <title>Ikon</title>
+                  <url>/images/apparel/Ikon.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>12</id>
+                  <title>Wild Fox 02</title>
+                  <url>/images/apparel/Wild_Fox02.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+               <image>
+                  <id>13</id>
+                  <title>Streetwise Fall 03</title>
+                  <url>/images/apparel/Streetwise_Fall03.jpg</url>
+                  <desc />
+                  <isActive>true</isActive>
+               </image>
+            </images>
+         </item>
+      </items>
+   </category>
+</photography>

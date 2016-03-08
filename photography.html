@@ -1,0 +1,48 @@
+ 
+
+<div class="main-viewer-container" ng-mouseover="isHighlight = true" ng-mouseleave="isHighlight = false"> 
+	<div style="position:absolute; width:100%;">
+  		<div class="direction-arrow left" ng-class="{highlight : isHighlight}" ng-click="carousel(false)"></div>
+  		<div class="direction-arrow right"  ng-class="{highlight : isHighlight}" ng-click="carousel(true)"></div>
+	</div>  
+
+	<div id="images" ng-swipe-left="carousel(false)" ng-swipe-right="carousel(true)">      
+	   	
+   		<lr-spinner ng-if="!ActiveItem.isLoaded" is-video="false" lr-error-text="The image failed to load."></lr-spinner>
+
+		<ul>                  
+		  	<li class="active-image">
+		  		<img alt="{{ActiveItem.title}}" ng-src="{{ActiveItem.url}}" lr-photo-image/>
+  			</li>
+  			<!--<li class="active-image" ng-if="isMobile">
+		  		<img ng-click="ActiveItem.isFullScreen = !ActiveItem.isFullScreen" alt="{{ActiveItem.title}}" ng-src="{{ActiveItem.url}}" lr-photo-image/>
+  			</li>-->
+		</ul>                
+          
+	</div>
+</div>
+
+<!--<div ng-if="ActiveItem.isFullScreen" style="position: fixed;
+		    top: 0;
+		    height: 100%;
+		    width: 100%;
+		    left: 0;
+		    z-index: 299;">
+	<div style="position: absolute;
+		    height: 100%;
+		    width: 100%;
+		    background:#000;
+		    opacity:.8;">
+	</div>
+	<img style="width:100%; z-index:399; position:absolute;" alt="{{ActiveItem.title}}" ng-src="{{ActiveItem.url}}"> 
+	<div ng-click="ActiveItem.isFullScreen = !ActiveItem.isFullScreen" style="width:50px; height:50px; position: absolute; top: 0; right: 0; z-index: 99999; color:#fff; font-size: 50px; cursor:pointer;">X</div>
+</div>-->
+
+<div class="slide-count" ng-if="!isMobile">
+<ul>
+<a href="#/photography/{{Collection.Category.Name}}/{{image.title}}" ng-repeat="image in Collection.Data track by $index" >
+	<li class="slide-count-item photo" ng-class="{'selected' : Collection.Item.Index == $index}"  data-index="{{$index}}" data-id="{{image.id}}"></li>
+	</a>
+</ul>
+</div>
+

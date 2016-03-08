@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="description" content="Light Regions | Production | Photography">
+<meta name="keywords" content="light, regions, production, photography, lightregions, la, los angeles, california, cali, correll, ryan, michael, mike, Dueñas, rodriguez, film">
+<meta name="author" content="Light Regions">
+
+<title>Light Regions</title>
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<link media='screen and (min-width: 0px) and (max-width: 768px)' href="/css/mobile.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Nunito:300' rel='stylesheet' type='text/css'>
+<link rel="icon" 
+      type="image/jpg" 
+      href="/images/thumbnails/banner_thumb.jpg">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-route.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-touch.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
+<script type="text/javascript" src="app/app.js"></script>
+<script type="text/javascript" src="app/controllers/MainCtrl.js"></script>
+<script type="text/javascript" src="app/directives/video-player.directive.js"></script>
+<script type="text/javascript" src="app/directives/spinner.directive.js"></script>
+<script type="text/javascript" src="app/directives/video-buffer.directive.js"></script>
+<script type="text/javascript" src="app/directives/photography-image.directive.js"></script>
+<script src="app/vendors/ui-bootstrap-0.12.1.min.js"></script>
+
+</head>
+<body ng-app="lightRegionsApp" ng-controller="MainCtrl" ng-class="{disabled : isMobileNavExp}" ng-cloak>
+    <div class="page-wrapper">
+      <header class="site-header-wrapper" ng-class="{'mobile-nav-open' : isMobileNavExp}">
+        <div id="menu-btn" ng-show="isMobile" ng-click="isMobileNavExp = !isMobileNavExp"></div>
+        <div class="full-width">           
+            <div class="site-logo"></div>
+           <div class="site-type-selection desktop-nav"  ng-if="!isMobile">
+              <ul class="site-type-selection-ul">          
+                <li class="site-ref" ng-class="{'first-item' : $index < 1}" ng-repeat="link in headerLinks track by $index" ng-click="{{link.click}}">
+                  <a href="{{link.url}}" ng-class="{'current-ref' : Theme == link.title.toLowerCase()}">{{link.title}}</a>
+                </li>
+            </div>             
+        </div>
+          <div class="top-nav-wrapper desktop-nav" ng-if="!isMobile">
+              <div class="top-nav">
+                  <ul ng-if="Theme === 'photography'">
+                    <a ng-repeat="topic in AllData[DataIndex]['sub-items'] track by $index" href="#/{{Theme}}/{{topic.name}}/{{topic['images'][0].title}}"><li ng-class="{selected : topic.name === Collection.Category.Name}" class="nav-link" data-subIndex="{{topic.id}}">
+                      <span>{{topic.name}}</span>
+                    </li></a>
+                  </ul>
+                  <ul ng-if="Theme === 'production'">
+                    <a ng-repeat="topic in AllData[DataIndex]['sub-items'] track by $index" href="#/{{Theme}}/{{topic.name}}/{{topic['sub-items'][0].name}}/{{topic['sub-items'][0]['videos'][0].title}}"><li ng-class="{selected : topic.name === Collection.Category.Name}" class="nav-link" data-subIndex="{{topic.id}}" >
+                      <span>{{topic.name}}</span>
+                    </li></a>
+                  </ul>                  
+              </div>
+          </div>
+          <div class="sub-nav-wrapper" ng-if="Theme != 'photography' && !isMobile">
+            <div class="sub-nav">
+              <ul ng-if="Theme === 'production'">
+              <a href="#/{{Theme}}/{{Collection.Category.Name}}/{{subItem.name}}/{{subItem['videos'][0].title}}" ng-repeat="subItem in AllData[DataIndex]['sub-items'][Collection.Category.Index]['sub-items'] track by $index">
+               <li class="sub-nav-link" ng-class="{selected : subItem.name === Collection.SubCategory.Name}">
+                  <span>{{subItem.name}}</span>
+                </li>
+                </a>
+              </ul>
+            </div>               
+          </div>
+      </header>    
+
+    <div class="content-wrapper" ng-class="{'mobile-nav-open' : isMobileNavExp}">
+      <div id="mobile-clear-overlay" ng-class="{'hide' : !isMobileNavExp}"></div>
+      <div class="content" ng-view> 
+
+      </div>
+    </div>
+
+    <div class="push"></div>
+          <div class="footer">
+              <a href="http://www.instagram.com/lightregions" target="_blank"><div class="social-link" id="instagram"></div></a>              
+              <a href="http://www.twitter.com" target="_blank"><div class="social-link" id="twitter"></div></a>
+          </div>
+    </div>
+
+
+    <div id="mobile-nav-wrapper" ng-if="isMobile" ng-class="{expanded : isMobileNavExp}">
+    <div class="menu-title">Menu</div>
+      <ul class="mobile-topNav" style="display:block;">
+         <li class="site-ref" ng-repeat="localTheme in AllData track by $index" ng-init="expandBelow = true;">
+            <div class="mobile-theme-selector" ng-click="expandBelow = !expandBelow">{{localTheme.name.toUpperCase()}}</div>
+            <ul class="mobile-subNav" ng-show="expandBelow">
+               <li class="mobile-nav-link" ng-repeat="topic in localTheme['sub-items'] track by $index">
+                  <!-- Production -->
+                  <div class="sub-nav-selector" ng-click="expandBelow = !expandBelow" ng-hide="localTheme.name.toLowerCase() == 'photography'">
+                    {{topic.name}}
+                  </div>
+                  <ul ng-show="expandBelow" ng-if="localTheme.name.toLowerCase() == 'production'">                   
+                    <li ng-repeat="subTopic in topic['sub-items'] track by $index" class="mobile-sub-nav-link">
+                      <a href="#/{{localTheme.name.toLowerCase()}}/{{topic.name}}/{{subTopic.name}}">
+                        <div class="sub-nav-selector" ng-class="{selected : subTopic.name == Collection.SubCategory.Name}"> 
+                          {{subTopic.name}}
+                        </div>
+                      </a>   
+                    </li>
+                  </ul>
+                  <!-- Photography -->
+                  <a href="#/{{localTheme.name.toLowerCase()}}/{{topic.name}}" ng-if="localTheme.name.toLowerCase() == 'photography'">
+                    <div class="sub-nav-selector" ng-class="{selected : topic.name == Collection.Category.Name}"> 
+                      {{topic.name}}
+                    </div>
+                  </a>
+               </li>
+            </ul>
+         </li>
+         <li class="site-ref">
+            <a href="/#about"><div class="mobile-theme-selector">ABOUT</div></a>
+         </li>
+         <li class="site-ref">
+           <a href="mailto:info@lightregions.com"><div class="mobile-theme-selector">CONTACT</div></a>
+         </li>           
+         <div class="mobile-push"></div>
+      </ul>
+    </div>
+  </body>
+</html>
+
+

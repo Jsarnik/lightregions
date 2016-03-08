@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<production>
+   <category>
+      <id>1</id>
+      <name>Showreels</name>
+      <shortDesc>showreel videos</shortDesc>
+      <items>
+         <item>
+            <id>1</id>
+            <name>Showreels</name>
+            <shortDesc />
+            <videos>
+               <video>
+                  <id>undefined</id>
+                  <title>2013</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/showreels/2013-Ryan-Correl-Showreel-HD.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+               <video>
+                  <id>undefined</id>
+                  <title>2012</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/showreels/2012-Ryan-Correl-Showreel-HD.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+               <video>
+                  <id>undefined</id>
+                  <title>2010</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/showreels/2010-Ryan-Correl-Showreel-HD.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+            </videos>
+         </item>
+      </items>
+   </category>
+   <category>
+      <id>2</id>
+      <name>Commercials</name>
+      <shortDesc>commercials videos</shortDesc>
+      <items>
+         <item>
+            <id>1</id>
+            <name>Audi</name>
+            <shortDesc />
+            <videos>
+               <video>
+                  <id>undefined</id>
+                  <title>Audi</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/commercials/audi/RC AUDI X FACTOR EDIT.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+            </videos>
+         </item>
+         <item>
+            <id>2</id>
+            <name>Pelican Cases</name>
+            <shortDesc />
+            <videos>
+               <video>
+                  <id>undefined</id>
+                  <title>Pelican Cases</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/commercials/pelican-cases/pelican_cases_pro_gear_vault.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+            </videos>
+         </item>
+         <item>
+            <id>3</id>
+            <name>Nike</name>
+            <shortDesc />
+            <videos>
+               <video>
+                  <id>undefined</id>
+                  <title>Magnista Soccer 2014</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/commercials/nike/Nike_DowntownLA_R4.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+               <video>
+                  <id>undefined</id>
+                  <title>Mercurial Soccer 2014</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/commercials/nike/Nike_Mercurial_06122014_R3.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+               <video>
+                  <id>undefined</id>
+                  <title>USA vs Turkey</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/commercials/nike/Nike_USAVSTURKEY_R3.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+               <video>
+                  <id>undefined</id>
+                  <title>Hypervenom 2013</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/commercials/nike/Nike_HV_Recap_Video_R23.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+            </videos>
+         </item>
+         <item>
+            <id>4</id>
+            <name>Red Bull</name>
+            <shortDesc />
+            <videos>
+               <video>
+                  <id>undefined</id>
+                  <title>Red Bull</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/commercials/red-bull/Red_Bull_Parkour_Promo-HD.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+            </videos>
+         </item>
+         <item>
+            <id>5</id>
+            <name>Jack Daniels</name>
+            <shortDesc />
+            <videos>
+               <video>
+                  <id>undefined</id>
+                  <title>Jack Daniels</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/commercials/jack-daniels/Jack_Daniels_Promo-HD.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+            </videos>
+         </item>
+      </items>
+   </category>
+   <category>
+      <id>3</id>
+      <name>Music Videos</name>
+      <shortDesc>music videos</shortDesc>
+      <items>
+         <item>
+            <id>1</id>
+            <name>Kat Graham</name>
+            <shortDesc />
+            <videos>
+               <video>
+                  <id>undefined</id>
+                  <title>kat Graham</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/music-videos/kat.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+            </videos>
+         </item>
+      </items>
+   </category>
+   <category>
+      <id>4</id>
+      <name>Films</name>
+      <shortDesc>film videos</shortDesc>
+      <items>
+         <item>
+            <id>1</id>
+            <name>Protocol</name>
+            <shortDesc />
+            <videos>
+               <video>
+                  <id>undefined</id>
+                  <title>Protocol</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/films/PROTOCOL_2011_Trailer-HD.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+            </videos>
+         </item>
+      </items>
+   </category>
+   <category>
+      <id>5</id>
+      <name>Promotional</name>
+      <shortDesc>promotional videos</shortDesc>
+      <items>
+         <item>
+            <id>1</id>
+            <name>Zes</name>
+            <shortDesc />
+            <videos>
+               <video>
+                  <id>undefined</id>
+                  <title>Zes</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/promotional/zes/ZES_Promo-HD.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+            </videos>
+         </item>
+         <item>
+            <id>2</id>
+            <name>Streetwise</name>
+            <shortDesc />
+            <videos>
+               <video>
+                  <id>undefined</id>
+                  <title>Streetwise</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/promotional/streetwise/sw_dope.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+               <video>
+                  <id>undefined</id>
+                  <title>Streetwise</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/promotional/streetwise/sw_fall.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+               <video>
+                  <id>undefined</id>
+                  <title>Streetwise</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/promotional/streetwise/sw_mceiht.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+               <video>
+                  <id>undefined</id>
+                  <title>Streetwise</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/promotional/streetwise/SW_summer.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+               <video>
+                  <id>undefined</id>
+                  <title>Streetwise</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/promotional/streetwise/SW_summer_day.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+               <video>
+                  <id>undefined</id>
+                  <title>Streetwise</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/promotional/streetwise/sw_dubbz.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+               <video>
+                  <id>undefined</id>
+                  <title>Streetwise</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/promotional/streetwise/sw_winter.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+            </videos>
+         </item>
+         <item>
+            <id>3</id>
+            <name>Ikon</name>
+            <shortDesc />
+            <videos>
+               <video>
+                  <id>undefined</id>
+                  <title>Ikon Skate LA</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/promotional/ikon/Ikon_Skate_LA.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+               <video>
+                  <id>undefined</id>
+                  <title>Ikon Skate LA 2</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/promotional/ikon/Ikon_Skate_2.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+            </videos>
+         </item>
+         <item>
+            <id>4</id>
+            <name>Moet</name>
+            <shortDesc />
+            <videos>
+               <video>
+                  <id>undefined</id>
+                  <title>Moet</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/promotional/moet/Moet-Promo-HD.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+            </videos>
+         </item>
+         <item>
+            <id>5</id>
+            <name>Wild-Fox</name>
+            <shortDesc />
+            <videos>
+               <video>
+                  <id>undefined</id>
+                  <title>Young Gunz</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/promotional/wild-fox/young_gunz.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+            </videos>
+         </item>
+      </items>
+   </category>
+   <category>
+      <id>6</id>
+      <name>TV</name>
+      <shortDesc>tv videos</shortDesc>
+      <items>
+         <item>
+            <id>1</id>
+            <name>ABC Family</name>
+            <shortDesc />
+            <videos>
+               <video>
+                  <id>undefined</id>
+                  <title>ABC Family - Popup Santa</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/tv/abc_family_POP_UP_SANTA.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+            </videos>
+         </item>
+         <item>
+            <id>2</id>
+            <name>United Parking</name>
+            <shortDesc />
+            <videos>
+               <video>
+                  <id>undefined</id>
+                  <title>United Parking</title>
+                  <thumb>images/_global/thumb_placeholder.jpg</thumb>
+                  <src>videos/tv/United_Parking.mp4</src>
+                  <vimeo />
+                  <youtube />
+                  <desc />
+                  <isActive>true</isActive>
+               </video>
+            </videos>
+         </item>
+      </items>
+   </category>
+</production>

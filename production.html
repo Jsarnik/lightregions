@@ -1,0 +1,18 @@
+<div class="main-viewer-container"> 
+ 
+		<lr-spinner ng-if="!ActiveItem.isLoaded" is-video="true" lr-error-text="The video failed to load."></lr-spinner>
+
+	<lr-video-player lr-src="ActiveItem.src" is-mobile="isMobile"></lr-video-player>
+
+</div> 
+
+<div class="slide-count"> 
+	<ul> 
+		<a href="#/production/{{Collection.Category.Name}}/{{Collection.SubCategory.Name}}/{{video.title}}" ng-repeat="video in Collection.Data track by $index">
+			<li class="slide-count-item video" ng-class="{'selected' : Collection.Item.Index === $index}" > 
+				<span class="title">{{video.title}}</span>
+				<span class="description">{{video.shortDesc}}</span> 
+			</li>
+		</a> 
+	</ul> 
+</div>
