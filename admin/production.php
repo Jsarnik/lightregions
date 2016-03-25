@@ -127,7 +127,13 @@ $('#user_name').html(current_user);
           </div>
         </div>
     </div>
-  <div class="container main-frame" ng-controller="mainController" ng-init="init('production')">
+  <div ng-cloak class="container main-frame" ng-controller="mainController" ng-init="init('production')">
+    
+    <div class="popup-message hidden" ng-class="validation.isSuccess ? 'success' : 'error'" lr-popup-message="{{validation.isMessageShown}}">
+      <div class="close-button" ng-click="closePopup()">&#x2716;</div>
+      <span>{{validation.messageText}}</span>
+    </div>
+
     <div class="search-box row-fluid form-inline">
       <label>Category: </label>
 <input id="category-filter" type="text" ng-model="filterCategory"/>
@@ -156,10 +162,10 @@ $('#user_name').html(current_user);
 </div>
 
 <div ng-mouseover="hoverIn('move', 'category-' + $index);" ng-mouseleave="hoverOut('move');">
-                                  <div class="button up" ng-click="changePosition(results['sub-items'],$index, subItems, false)">&#9650;</div>
+                                  <div class="button up" ng-click="changePosition(results['sub-items'], subItems, false)">&#9650;</div>
 </div>
 <div ng-mouseover="hoverIn('move', 'category-' + $index);" ng-mouseleave="hoverOut('move');">
-                                  <div class="button down" ng-click="changePosition(results['sub-items'],$index, subItems, true)">&#9660;</div>
+                                  <div class="button down" ng-click="changePosition(results['sub-items'], subItems, true)">&#9660;</div>
 </div>
                         <div ng-hide="isShow('subItem-'+$index)">
                             <span>|</span>
@@ -190,10 +196,10 @@ $('#user_name').html(current_user);
                          <div class="button delete" ng-click="remove(subItems['sub-items'], sub);" ng-confirm-click="Are you sure you want to delete {{sub.name}}?">X</div>
 </div>                   
                   <div ng-mouseover="hoverIn('move', 'subItem-' + $parent.$index + '-' + $index);" class="disableable" disable="isDisabled" ng-mouseleave="hoverOut('move');">
-                                <div class="button up" ng-click="changePosition(subItems['sub-items'],$index, sub, false)">&#9650;</div>
+                                <div class="button up" ng-click="changePosition(subItems['sub-items'], sub, false)">&#9650;</div>
 </div>
 <div ng-mouseover="hoverIn('move', 'subItem-' + $parent.$index + '-' + $index);" class="disableable" disable="isDisabled" ng-mouseleave="hoverOut('move');">
-                                <div class="button down" ng-click="changePosition(subItems['sub-items'],$index, sub, true)">&#9660;</div>
+                                <div class="button down" ng-click="changePosition(subItems['sub-items'], sub, true)">&#9660;</div>
 </div>                        
                       <div ng-hide="isShow('subItem-' + $parent.$index + '-' + $index)">
                           <span>|</span>
@@ -214,7 +220,7 @@ $('#user_name').html(current_user);
 
                         </div>
                         <ul class="video">
-                          <li id="video-{{$parent.$parent.$index}}-{{$parent.$index}}-{{$index}}" ng-class="{'item-in-delete' : isDelete}" ng-repeat="video in sub.videos | filter: filterVideo  track by $index">
+                          <li ng-class="{'light':$even,'dark':$odd}" id="video-{{$parent.$parent.$index}}-{{$parent.$index}}-{{$index}}" ng-class="{'item-in-delete' : isDelete}" ng-repeat="video in sub.videos | filter: filterVideo  track by $index">
                         <div ng-mouseover="hoverIn('remove', 'video-' + $parent.$parent.$index + '-' + $parent.$index + '-' + $index);" ng-mouseleave="hoverOut('remove');">
                         <div class="button delete item" ng-click="remove(sub.videos, video);" ng-confirm-click="Are you sure you want to delete {{video.title}}?">X</div>
                         </div>
@@ -308,17 +314,49 @@ $('#user_name').html(current_user);
                                         <tr><td><span>ACTIVE: </span></td>
                                             <td class="td-large">
                                             <div>
-                                                <input type="checkbox" ng-model="video.isActive" ng-click="setActivationState(video);">
-                                              </div>
-
-                                        </td></tr>
+                                              <input type="checkbox" ng-model="video.isActive" ng-click="setActivationState(video);">
+                                            </div>
+                                        </td>
+                                        </tr>
+                                          <tr>
+                                          <td>
+                                            <span>Move To: </span>
+                                          </td>
+                                          <td class="td-large">
+                                            <table>
+                                              <tr>
+                                                <td>
+                                                  <span>Category:</span>
+                                                </td>
+                                                <td>
+                                                  <select class="dropDown" ng-model="video.itemMoveTo.category">
+                                                    <option ng-if="key != subItems.name" ng-repeat="(key, value) in dropDowns.Categories" value="{{key}}">{{key}}</option>                                              
+                                                  </select>
+                                                </td>
+                                              <tr>
+                                              <tr ng-show="video.itemMoveTo.category != null">
+                                                <td>
+                                                  <span>Sub Category:</span>
+                                                </td>
+                                                <td>
+                                                <select class="dropDown" ng-model="video.itemMoveTo.subCategory">
+                                                  <option ng-repeat="(key, value) in dropDowns.Categories[video.itemMoveTo.category]" value="{{value}}">{{value}}</option>                                              
+                                                </select>
+                                                </td>                                              
+                                              <tr>
+                                            </table>
+                                          </td>
+                                          <td ng-show="video.itemMoveTo.subCategory != null">
+                                            <a href="javascript:void(0)" ng-confirm-click="Are you sure you want to move {{video.title}} from {{subItems.name}} > {{sub.name}} to {{video.itemMoveTo.category}} > {{video.itemMoveTo.subCategory}}?" ng-click="changeCategory(video, sub.videos, sub.name)">| Move</a>
+                                          </td>
+                                        </tr>   
                                     </table>
-                                <div class="button-container">
-                                                                  <div style="position:relative; height:26px; display:block;"></div>
-                                  <div ng-mouseover="hoverIn('move', 'video-'  + $parent.$parent.$index + '-' + $parent.$index + '-' + $index);" class="disableable" disable="isDisabled" ng-mouseleave="hoverOut('move');"><button class="button up" ng-click="changePosition(sub.videos,$index, video,false)">&#9650;</button></div>                                  
-                                  <div ng-mouseover="hoverIn('move', 'video-'  + $parent.$parent.$index +  '-' +$parent.$index + '-' + $index);" class="disableable" disable="isDisabled" ng-mouseleave="hoverOut('move');"><button class="button down" ng-click="changePosition(sub.videos,$index, video,true)">&#9660;</button></div>
-                                  <div style="position:relative; height:26px; display:block;"></div>
-                                </div>
+                                    <div class="button-container">
+                                    <div style="position:relative; height:26px; display:block;"></div>
+                                      <div ng-mouseover="hoverIn('move', 'video-'  + $parent.$parent.$index + '-' + $parent.$index + '-' + $index);" class="disableable" disable="isDisabled" ng-mouseleave="hoverOut('move');"><button class="button up" ng-click="changePosition(sub.videos,video,false)">&#9650;</button></div>                                  
+                                      <div ng-mouseover="hoverIn('move', 'video-'  + $parent.$parent.$index +  '-' +$parent.$index + '-' + $index);" class="disableable" disable="isDisabled" ng-mouseleave="hoverOut('move');"><button class="button down" ng-click="changePosition(sub.videos,video,true)">&#9660;</button></div>
+                                      <div style="position:relative; height:26px; display:block;"></div>
+                                    </div>
                                       
                                       
                                   </div>

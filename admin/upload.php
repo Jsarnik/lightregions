@@ -58,14 +58,14 @@ function createThumb($src, $dest){
     
     imagecopyresampled($virtual_image, $source_image, 0, 0, 0, 0, 100, 100, $width, $height);
     
-    imagejpeg($virtual_image, $dest . '/' . basename($src, '.' . pathinfo($src, PATHINFO_EXTENSION)) .'_thumb.jpg');
-    $_SESSION['TEMP_THUMBNAIL'] = $dest . '/' . basename($src, '.' . pathinfo($src, PATHINFO_EXTENSION)) .'_thumb.jpg';
+    imagejpeg($virtual_image, $dest . '/' . basename($src, '.' . pathinfo($src, PATHINFO_EXTENSION)) .'_thumb.' . pathinfo($src, PATHINFO_EXTENSION));
+    $_SESSION['TEMP_THUMBNAIL'] = $dest . '/' . basename($src, '.' . pathinfo($src, PATHINFO_EXTENSION)) .'_thumb.' . pathinfo($src, PATHINFO_EXTENSION);
 
 }
 
 function fileTypeCorrect($path, $shouldBeImage){    
     $path_parts = pathinfo($path);
-    $ext = $path_parts['extension'];
+    $ext = strtolower($path_parts['extension']);
 
     if($shouldBeImage){
         if($ext !== 'jpg' & $ext !== 'png' & $ext !== 'gif' & $ext !== 'jpeg' & $ext !== 'bmp'){

@@ -10,7 +10,7 @@ $expired = '';
 $token = htmlspecialchars($_GET["token"]);
 
 if (isset($_SESSION['current_user']['login_username'])) {
-    header("Location: photograghy.php");
+    header("Location: photography.php");
     return;
 }
 

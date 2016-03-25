@@ -30,7 +30,8 @@ $url = basename($_SERVER['SCRIPT_FILENAME']);
 			$progress = 'success not set';
 
 	    echo $progress;
-    	session_destroy();
+	    	//session_unset();
+    	//session_destroy();
 	    die;
 	}
 

@@ -8,7 +8,7 @@ app.config(function($routeProvider){
   //    }
   //  }})
   })
-.service('dataSvc', function($http) {
+.service('dataSvc', function($http, $q) {
 
     var host_root = '';
     var myData = null;
@@ -24,41 +24,63 @@ app.config(function($routeProvider){
                 'path' : host_root + '/data/data.json'
             };
 
-           $http.post('save.php', data)
-            .success(function(data, status, headers, config)
+            var deferred = $q.defer();
+            $http.post('save.php', data)
+            .success(function(response)
             {
-                //console.log(status + ' - ' + data);
+                deferred.resolve({
+                    response: response
+                });
+            }).error(function(msg){
+                console.log(msg);
             })
-            .error(function(data, status, headers, config)
-            {
-                //console.log('error');
-            });
+            return deferred.promise;
         },
         deleteData: function(filePath) {
-
             data = {
                 'path': filePath
             }
 
+            var deferred = $q.defer();
             $http.post('delete.php', data)
-            .success(function(data, status, headers, config)
+            .success(function(response)
             {
-                console.log(status + ' - ' + data);
+                deferred.resolve({
+                    response: response
+                });
+            }).error(function(msg){
+                console.log(msg);
             })
-            .error(function(data, status, headers, config)
+            return deferred.promise;
+        },
+        moveData: function(src, dest){
+
+            data = {
+                'src': src,
+                'dest': dest
+            }
+
+            var deferred = $q.defer();
+            $http.post('move.php', data)
+            .success(function(response)
             {
-                console.log('error');   
-            });
-          },
-          getIndex: function(){
-                return $index;
-          },
-          setIndex: function(val){
-                $index = val;
-          },
-          getHostRoot: function(){
-            return $hostRoot = host_root;
-          }          
+                deferred.resolve({
+                    response: response
+                });
+            }).error(function(msg){
+                console.log(msg);
+            })
+            return deferred.promise;
+        },
+        getIndex: function(){
+            return $index;
+        },
+        setIndex: function(val){
+            $index = val;
+        },
+        getHostRoot: function(){
+           return $hostRoot = host_root;
+        }          
     }
 })
 .controller("mainController", function($scope, $http, $modal, dataSvc){       
@@ -72,6 +94,12 @@ app.config(function($routeProvider){
     $scope.isNew = false;
     $scope.isDisabled = false;
     $scope.hostRoot = dataSvc.getHostRoot();    
+    $scope.dropDowns = {};
+    $scope.validation = {
+        isMessageShown: false,
+        isSuccess: null,
+        messageText: ''
+    };
 /********************** Initialize Bootstrap Modals *************************/
 
     $scope.open = function(scope, modalType, last){
@@ -90,6 +118,9 @@ app.config(function($routeProvider){
             break;
             case 'subItem':
                 template = 'template/modal/category.html';
+            break;
+            case 'error':
+                template = 'template/modal/error.html';
             break;
         }
 
@@ -111,18 +142,36 @@ app.config(function($routeProvider){
     //Delete
     $scope.remove = function(array, item){
 
-        var _index = array.indexOf(item);
+        var _index = -1;
+        _index = array.indexOf(item);
+
+        console.log(_index)
 
         if(_index === -1)
             return;
         
-        array.splice(_index,1);
-        $scope.$apply;
-        $scope.confirmSave();
-        if (angular.isUndefined(item.url))
-            dataSvc.deleteData(item.src);
-        else
-            dataSvc.deleteData(item.url);
+        var deleteSrc = '';
+
+        if (angular.isUndefined(item.url)){        
+            deleteSrc = item.src;
+        }
+        else{
+            deleteSrc = item.url;
+        }
+
+        if(deleteSrc !== ''){
+            dataSvc.deleteData(deleteSrc).then(function(response){
+                if(!response.response.isSuccess){
+                    $scope.displayPopup(response.response.isSuccess, response.response.errorMessage);
+                    return;
+                }
+            })
+        }
+            
+        array.splice(_index,1);       
+        $scope.$apply();
+        $scope.confirmSave();        
+
     };  
 
     /********************** Edit / Manipulate Text *************************/
@@ -147,10 +196,6 @@ app.config(function($routeProvider){
         $scope.confirmSave();
     }
 
-    $scope.editMode = function(scope, _GUID){
-        
-    }
-
     $scope.isShow=function(GUID){
         if ($scope.isEdit)
             return GUID === $scope.selectedID;
@@ -164,19 +209,118 @@ app.config(function($routeProvider){
     };
 
     //Save
-    $scope.confirmSave = function(){    
-        dataSvc.saveData();
+    $scope.confirmSave = function(){ 
+        
+        dataSvc.saveData().then(function(response){
+            if(response.response.isSuccess){
+                $scope.displayPopup(response.response.isSuccess, 'Success!');
+            }
+            else{
+                $scope.displayPopup(response.response.isSuccess, response.response.errorMessage);
+            }
+        })
+
         $scope.isEdit = false;
         $scope.isDisabled = false;  
         $scope.selectedID = '';
+    }
+
+    $scope.changeCategory = function(item, _scopeFrom, from){
+
+        var itemCopy = angular.copy(item);
+
+        var _removeAtIndex = -1;
+        var appendAtIndex = 0;
+        var _scopeTo = null;
+        var toLower = {
+            fromString: from.toLowerCase(),
+            toCategory: itemCopy.itemMoveTo.category.toLowerCase(),
+            toSubCategory: null
+        }
+        
+        if(!angular.isUndefined(itemCopy.itemMoveTo.subCategory)){
+            toLower.toSubCategory = itemCopy.itemMoveTo.subCategory.toLowerCase();
+            dest = 'videos/' + toLower.toCategory + '/' + toLower.toSubCategory;
+            src = itemCopy.src.toLowerCase();
+            itemCopy.src = src.replace(toLower.fromString, toLower.toCategory + '/' + toLower.toSubCategory);
+        }
+        else{
+            dest = 'images/' + toLower.toCategory;
+            src = itemCopy.url.toLowerCase();
+            itemCopy.url = src.replace(toLower.fromString, toLower.toCategory);
+            itemCopy.thumb = itemCopy.thumb.toLowerCase().replace(toLower.fromString, toLower.toCategory);
+        }
+
+        angular.forEach($scope.results['sub-items'], function(category, i){
+            if (category.name.toLowerCase() === toLower.toCategory){
+                if(toLower.toSubCategory === null){
+                    _scopeTo = category['images'];
+                    appendAtIndex = category['images'].length -1;
+                }
+                else
+                {
+                    angular.forEach(category['sub-items'], function(sub, j){
+                        if (sub.name.toLowerCase() === toLower.toSubCategory){
+                            _scopeTo = sub['videos'];
+                            appendAtIndex = sub['videos'].length -1;
+                        }
+                    })
+                }                
+            }
+        })
+
+        _removeAtIndex = _scopeFrom.indexOf(item);
+        itemCopy.id = appendAtIndex + 1;
+
+        if(_removeAtIndex !== -1){
+            dataSvc.moveData(src,dest).then(function(response){
+                if(response.response.isSuccess){
+                    item = itemCopy;
+                    _scopeFrom.splice(_removeAtIndex, 1);
+                    _scopeTo.splice((appendAtIndex), 0, item);
+                    $scope.confirmSave();
+                    $scope.displayPopup(response.response.isSuccess, 'Success!');                    
+                }
+                else{
+                    $scope.displayPopup(response.response.isSuccess, response.response.errorMessage);
+                }
+            }, function(error){
+                $scope.displayPopup(false, 'The following error occured: ' + error);
+            })
+        }
+
+        delete itemCopy;
+        delete item.itemMoveTo;
+    }
+
+    $scope.closePopup = function(){
+        $scope.validation.isMessageShown = false;
+    }
+
+    $scope.displayPopup = function(isSuccess, message){
+        $scope.validation.isMessageShown = true;
+        $scope.validation.isSuccess = isSuccess;
+        $scope.validation.messageText = message;
+
+        if(isSuccess){
+            setTimeout(function(){
+                $scope.validation.isMessageShown = false;
+                $scope.$apply();
+            },1000)
+        }
     }
 
     /***********************************************************************/
 
     /********************** Manipulate Scope Position **********************/
 
-    $scope.changePosition = function(scope, _index, value, isDown, $index){
+    $scope.changePosition = function(scope, value, isDown){
         if (!$scope.isMove)
+            return;
+
+        var _index = scope.indexOf(value);
+
+        if(isDown && (scope.length <= (_index + 1)))
             return;
 
         if(!isDown){
@@ -194,8 +338,8 @@ app.config(function($routeProvider){
         angular.forEach(scope, function(items, index){
             items.id = index+1;
         });
-        $scope.$apply;
-        $scope.confirmSave();
+
+        $scope.confirmSave();        
 
         timer = setTimeout(function(){
             $scope.isMove = false;
@@ -245,6 +389,23 @@ app.config(function($routeProvider){
         }
     }
 
+  
+    $scope.fillDropDowns = function(){    
+
+        $scope.dropDowns.Categories = {};        
+
+        angular.forEach($scope.results['sub-items'], function(cats){              
+                var subCategories = [];
+
+                angular.forEach(cats['sub-items'], function(subs){
+                    subCategories.push(subs.name);
+                });            
+
+            $scope.dropDowns.Categories[cats.name] = subCategories;
+        }); 
+        console.log($scope.dropDowns.Categories);
+    }
+
     /********************** Initialize Theme *************************/
 
     $scope.init = function(_theme)
@@ -265,7 +426,6 @@ app.config(function($routeProvider){
 
         $http.get($scope.hostRoot +'/data/data.json').success(function(data){
 
-
             if(data.length < 1){
                 $JSON = '';
                 dataSvc.Save;
@@ -274,21 +434,9 @@ app.config(function($routeProvider){
             $scope.master = data;
 
             $scope.results = data.menu[$current_theme_index];
-            return;
-
-            angular.forEach($scope.master['menu'][1], function(items, index){
-
-                if (items['name'].toLowerCase() != _theme)
-                    return
-
-                angular.forEach(items['sub-items'], function(subItems, index){
-
-                if(subItems != null)                    
-                    $scope.results.push(subItems);
-                });
-            }); 
-        })                
-    }
+            $scope.fillDropDowns();     
+        });
+    };
 
 
     /************************ WATCHES ***************************/
@@ -341,25 +489,11 @@ app.config(function($routeProvider){
         var newIndex = parseInt($scope.object.id)-1;
 
         $scope.input[item].push($scope.object);
-        $scope.$apply;      
+        $scope.$apply();      
         dataSvc.saveData();
         uploadSuccess = false;        
         $modalInstance.dismiss('save');
         $scope.errorMsg = '';
-
-        //return;
-
-        //dataSvc.setIndex(newIndex);
-        //$scope.selectedID = 'image-' + newIndex;
-        //$scope.isEdit = true;
-
-        //$location.hash('scrollBottom');
-        //$anchorScroll();
-        //setTimeout(function(){
-        //     $scope.isEdit = true;
-        //    alert($scope.selectedID);
-        //    alert($scope.isEdit);
-        //},100)
     };
 
     /**************** Add Items ****************/
@@ -386,11 +520,20 @@ app.config(function($routeProvider){
 
     $scope.cancel = function () {
         uploadSuccess = false;
-        $modalInstance.dismiss('cancel');
         $scope.errorMsg = '';
 
-        if (!angular.isUndefined($scope.object.url)  || $scope.object.url !== '')
-            dataSvc.deleteData('');
+        if (!angular.isUndefined($scope.object.url) && $scope.object.url !== ''){
+            dataSvc.deleteData($scope.object.url).then(function(response){
+                if(response.response.isSuccess){
+                    $scope.displayPopup(response.response.isSuccess, 'Success!');
+                }
+                else{
+                    $scope.displayPopup(response.response.isSuccess, response.response.errorMessage);
+                }   
+            });
+        }
+
+        $modalInstance.dismiss('cancel');
     }; 
 
     var isShowBind = myVarWatch.watch(function(newVal) {    
@@ -488,4 +631,21 @@ app.config(function($routeProvider){
             }
         }
     };
-}])
+}]).directive('lrPopupMessage', function(){
+
+    return function(scope, elm, attr){
+
+        attr.$observe('lrPopupMessage',function(val){
+
+            if (val === 'true'){   //if display == true
+                console.log('remove hidden')
+                elm.removeClass('hidden');
+            }
+            else{
+                console.log('add hidden')
+               elm.addClass('hidden');
+            }
+        })
+    }
+    
+});

@@ -6,18 +6,35 @@ $request = json_decode($postdata);
 $data_path = $request->path;
 $data_path = $_SERVER["DOCUMENT_ROOT"] . $data_path;
 
-if (isset($_SESSION['TEMP_UPLOAD'])) {
-    if (file_exists($_SESSION['TEMP_UPLOAD']))
-		unlink($_SESSION['TEMP_UPLOAD']); //delete it
-}
-if (isset($_SESSION['TEMP_THUMBNAIL'])) {
-    if (file_exists($_SESSION['TEMP_THUMBNAIL']))
-		unlink($_SESSION['TEMP_THUMBNAIL']); //delete it
-}
-if($data_path === "")
-	return;
+$response_array["isSuccess"] = true;
+$response_array['errorMessage'] = "";
 
-if (file_exists($data_path))
-	unlink($data_path); //delete it
+
+if (file_exists($data_path)){
+	try{
+		unlink($data_path); //delete it
+		$thumb_path = pathinfo($data_path)['dirname'] . '/thumbnails/' . basename($data_path, '.' . pathinfo($data_path, PATHINFO_EXTENSION)) .'_thumb.' . pathinfo($data_path, PATHINFO_EXTENSION);
+
+		if (file_exists($thumb_path)){
+			try{
+				unlink($thumb_path); //delete it
+			}
+			catch(Exception $e){
+				$response_array["isSuccess"] = false;
+				$response_array['errorMessage'] = "An error occured attempting to delete " . $data_path;
+			}
+		}
+	}
+	catch(Exception $e){
+		$response_array["isSuccess"] = false;
+		$response_array['errorMessage'] = "An error occured attempting to delete " . $data_path;
+	}
+}
+else{
+	$response_array['errorMessage'] = "No file found at " . $data_path;
+}
+
+header('Content-type: application/json');
+echo json_encode($response_array);
 
 ?>

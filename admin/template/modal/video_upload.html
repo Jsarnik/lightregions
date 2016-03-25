@@ -18,7 +18,7 @@
                             <span>Short Desc:</span>
                         </li>
                         <li>
-                            <input type="text" name="desc" ng-model="object.title" ng-init="object.title=''"/>
+                            <input type="text" name="desc" ng-model="object.title"/>
                         </li>
                     </ul>
                     <ul class="fileUpload">
@@ -27,7 +27,7 @@
                         </li>
                         <li>
                             <div style="width:100%; height:100%; background:transparent; position:absolute;left:0;top:0;"></div>                        
-                            <input id="txtFileName" class="disabled-input" type="text" name="src" ng-model="object.url" ng-init="object.url=''" ng-model-onblur/>                        
+                            <input id="txtFileName" class="disabled-input" type="text" name="src" ng-model="object.url" ng-model-onblur/>                        
                         </li>
                         <li>    
                             <div class="button up" onclick="$('#fileToUpload').click();" ng-class="{'invisible' : isSave === true}" >▲ Upload</div>
