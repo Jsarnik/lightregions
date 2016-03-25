@@ -36,9 +36,13 @@ app.config(['$routeProvider', '$locationProvider',
     }).when('/about', {
         templateUrl: 'about.html',
         controller: 'AboutCtrl'
+
+    }).when('/preview', {
+        templateUrl: 'preview.html',
+        controller: 'previewCtrl'
     });
 
-	$routeProvider.otherwise({redirectTo: '/production', controller: 'MainCtrl'});
+	$routeProvider.otherwise({redirectTo: '/preview', controller: 'previewCtrl'});
     //$locationProvider.html5Mode(true);
 }])
 .factory('dataSvc', function($http, $location, $q) {
@@ -142,7 +146,6 @@ app.config(['$routeProvider', '$locationProvider',
     }
 
     
-
     var init = function()
     {
         if (!$scope.Collection.Initialized){
@@ -307,59 +310,12 @@ app.config(['$routeProvider', '$locationProvider',
         $scope.RenderView();
     }
 
-}).directive('aaaaa', ['$interval', '$timeout', function($interval,$timeout) {
-    return {
-        restrict: 'A',
-        link: function(scope, elm, attr) {
-                var loadAttempts = 0;
-                var reloadAttemps = 0;
-                var videoEl = elm.find('video');
-                var loadingEl = elm.find('div')[0];
-                var angElement = angular.element(loadingEl);
-                var timeout;
+}).controller('previewCtrl',function($scope){
 
-                scope.videoTryLoad = function(){
-
-                    scope.playbackError = false;
-                    interval = $interval(function() {
-
-                        scope.readyState = videoEl[0].readyState;   
-
-                        if (scope.readyState > 1){
-                            timeout = $timeout(function(){
-                                angElement.addClass('hide');
-                                videoEl[0].play();
-                            },1000)
-                            $interval.cancel(interval);
-                        }
-                        else if(loadAttempts === 60){ // give it 5 seconds and then try again     
-                            $interval.cancel(interval);  
-                            videoEl[0].src = scope.ActiveItem.src;
-                            scope.videoTryLoad();
-                        }   
-                        else if (loadAttempts >= 120){
-                            $interval.cancel(interval);     
-                            loadAttempts = 0;
-                            reloadAttemps++;               
-                            scope.playbackError = true;
-
-                            if(reloadAttemps > 2)
-                                scope.videoFailed = true;
-                            
-                        }
-
-                        loadAttempts ++;          
-                    }, 50);
-                }
-
-                scope.videoTryLoad();
-
-            elm.on('$destroy', function() {
-                $interval.cancel(interval);
-                $timeout.cancel(timeout);
-                videoEl[0].pause();
-                videoEl[0].remove();       
-          });
+    angular.forEach($scope.AllData, function(theme, index){
+        if(theme.name.toLowerCase() === 'preview'){
+            $scope.ActiveItem = theme.featuredVideos[0];
         }
-    }
-}]);
+    })
+
+})

@@ -1,7 +1,6 @@
 app.controller("videoPlayerCtrl", videoPlayerCtrl)
 .directive("lrVideoPlayer", videoPlayer);
 
-
 videoPlayerCtrl.$inject = ['$scope'];
 
 function videoPlayer() {
