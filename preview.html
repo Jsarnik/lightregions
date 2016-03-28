@@ -1,6 +1,6 @@
 <div class="main-viewer-container"> 
 		<lr-spinner ng-if="!ActiveItem.isLoaded" is-video="true" lr-error-text="The video failed to load."></lr-spinner>
 
-	<lr-video-player lr-src="{{ActiveItem.src}}" is-mobile="false"></lr-video-player>
+	<lr-video-player lr-src="{{ActiveItem.src}}" is-mobile="isMobile"></lr-video-player>
 
 </div>	
